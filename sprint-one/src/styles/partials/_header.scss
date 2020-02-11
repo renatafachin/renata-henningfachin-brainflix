@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 169px;
+  margin: 0 5vw;
+
+  &__box-logo {
+    // margin: 32px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+  }
+
+  //   &__logo {
+  //   }
+
+  &__search {
+    &-box {
+      display: flex;
+      justify-content: flex-start;
+      border: 1px solid $silver;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      background-color: $alabaster;
+    }
+
+    &-button {
+      background-color: transparent;
+      border: none;
+    }
+
+    &-input {
+      background-color: transparent;
+      border: none;
+      padding: 8px;
+    }
+  }
+
+  &__upload {
+    display: flex;
+    justify-content: flex-start;
+
+    &-btn {
+      background-color: $brainflix-blue;
+      color: $white;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      margin: 0 16px 16px 0;
+      width: 100%;
+    }
+  }
+
+  &__user-picture {
+    width: 46px;
+    height: 46px;
+    clip-path: circle(22px at center);
+    margin: 0;
+  }
+}
