@@ -1,0 +1,59 @@
+.comments {
+  margin: 0 5vw;
+
+  &__total {
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    border: 2px black;
+
+    &__user-picture {
+      width: 48px;
+      height: 48px;
+      clip-path: circle(23px at center);
+      margin: 16px 0 0 0;
+      border: 2px black;
+    }
+
+    &__heading {
+      color: $silver;
+    }
+
+    &__left {
+      width: fit-content;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__input {
+      border: 2px solid $silver;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      padding: 8px;
+
+      &:focus {
+        border-color: $brainflix-blue;
+      }
+    }
+
+    &__btn {
+      background-color: $brainflix-blue;
+      color: $white;
+      border: none;
+      border-radius: 4px;
+      width: 224px;
+      height: 48px;
+      margin-bottom: 24px;
+
+      &:hover {
+        background-color: $brainflix-blue-hover;
+      }
+    }
+  }
+}

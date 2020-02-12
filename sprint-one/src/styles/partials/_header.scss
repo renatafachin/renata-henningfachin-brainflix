@@ -5,14 +5,10 @@
   margin: 0 5vw;
 
   &__box-logo {
-    // margin: 32px;
     height: 48px;
     display: flex;
     justify-content: center;
   }
-
-  //   &__logo {
-  //   }
 
   &__search {
     &-box {
@@ -32,6 +28,8 @@
     &-input {
       background-color: transparent;
       border: none;
+      width: 288px;
+      height: 48px;
       padding: 8px;
     }
   }
@@ -47,14 +45,19 @@
       border-radius: 4px;
       padding: 12px;
       margin: 0 16px 16px 0;
-      width: 100%;
+      width: 224px;
+      height: 48px;
+
+      &:hover {
+        background-color: $brainflix-blue-hover;
+      }
     }
   }
 
   &__user-picture {
-    width: 46px;
-    height: 46px;
-    clip-path: circle(22px at center);
+    width: 48px;
+    height: 48px;
+    clip-path: circle(23px at center);
     margin: 0;
   }
 }
