@@ -1,6 +1,7 @@
 import React from 'react';
 import userPicture from '../assets/Images/Mohan-muruge.jpg';
 
+
 export default function Comments() {
     return (
         <div className="comments">
@@ -15,6 +16,7 @@ export default function Comments() {
                     <button className="comments__form__btn">COMMENT</button>
                 </div>
             </form>
+            <hr className="comments__divider"></hr>
         </div>
     );
 }

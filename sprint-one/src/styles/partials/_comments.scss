@@ -5,17 +5,19 @@
     margin-bottom: 32px;
   }
 
+  &__divider {
+    margin: 24px 0;
+  }
+
   &__form {
     display: flex;
     justify-content: space-between;
-    border: 2px black;
 
     &__user-picture {
       width: 48px;
       height: 48px;
       clip-path: circle(23px at center);
-      margin: 16px 0 0 0;
-      border: 2px black;
+      margin: 16px 16px 0 0;
     }
 
     &__heading {
@@ -29,6 +31,7 @@
     &__right {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
 
     &__input {
@@ -49,7 +52,7 @@
       border-radius: 4px;
       width: 224px;
       height: 48px;
-      margin-bottom: 24px;
+      // margin-bottom: 24px;
 
       &:hover {
         background-color: $brainflix-blue-hover;

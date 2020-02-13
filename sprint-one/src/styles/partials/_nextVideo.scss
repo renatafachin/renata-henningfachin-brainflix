@@ -1,0 +1,35 @@
+.next-video {
+  margin: 0 5vw;
+
+  &__heading {
+    color: $silver;
+    margin: 40px 0 40px 0;
+  }
+
+  &__video {
+    width: 120px;
+    height: 70px;
+    margin-right: 16px;
+  }
+
+  &__item {
+    display: flex;
+    justify-self: start;
+    margin-bottom: 24px;
+  }
+
+  &__left {
+    width: fit-content;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+}
