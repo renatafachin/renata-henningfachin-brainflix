@@ -10,6 +10,7 @@
     width: 120px;
     height: 70px;
     margin-right: 16px;
+    border-radius: 4px;
   }
 
   &__item {
@@ -31,5 +32,11 @@
   &__title {
     font-weight: 900;
     margin-bottom: 16px;
+  }
+}
+
+@include huge {
+  .next-video {
+    margin: 0;
   }
 }

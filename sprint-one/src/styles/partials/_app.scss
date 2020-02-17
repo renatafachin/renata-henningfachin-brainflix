@@ -1,0 +1,17 @@
+@include huge {
+  .main-structure {
+    margin: 0 12.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+
+    &__left {
+      width: 67vw;
+      margin-right: 32px;
+    }
+
+    &__aside {
+      //   width: 100%;
+    }
+  }
+}

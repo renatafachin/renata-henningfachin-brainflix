@@ -31,9 +31,33 @@
 
   &__name {
     font-weight: 900;
+    margin-bottom: 16px;
   }
 
   &__date {
     color: $silver;
+  }
+
+  &__text {
+    line-height: 20px;
+  }
+}
+
+@include medium {
+  .comments-list {
+    &__right-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    &__name {
+      margin-right: 16px;
+    }
+  }
+}
+
+@include huge {
+  .comments-list {
+    margin: 0;
   }
 }

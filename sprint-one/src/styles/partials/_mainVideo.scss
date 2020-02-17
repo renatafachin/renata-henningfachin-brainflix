@@ -1,51 +1,24 @@
 .video {
   &__player {
-    background-color: $black;
+    background-color: $real-black;
     height: 183px;
     width: 100vw;
     margin: 0;
+
+    &__divider {
+      margin: 24px 0;
+    }
   }
+}
 
-  &__divider {
-    margin: 24px 0;
+@include medium {
+  .video__player {
+    height: 400px;
   }
+}
 
-  &__details {
-    margin: 0 5vw;
-
-    &-title {
-      margin-top: 24px;
-    }
-
-    &-author-date {
-      margin-top: 16px;
-      display: flex;
-      justify-content: space-between;
-      width: fit-content;
-
-      &__date {
-        padding-left: 8px;
-        color: $silver;
-      }
-    }
-
-    &__views-likes {
-      margin-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      width: fit-content;
-    }
-
-    &-icon {
-      margin-right: 8px;
-    }
-
-    &-nums {
-      padding-right: 24px;
-    }
-
-    &-description {
-      margin-bottom: 40px;
-    }
+@include huge {
+  .video__player {
+    height: 540px;
   }
 }

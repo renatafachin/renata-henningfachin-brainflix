@@ -31,12 +31,18 @@
       width: 288px;
       height: 48px;
       padding: 8px;
+      font-family: AvenirNextRegular;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 
   &__upload {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: nowrap;
 
     &-btn {
       background-color: $brainflix-blue;
@@ -47,6 +53,7 @@
       margin: 0 16px 16px 0;
       width: 224px;
       height: 48px;
+      outline: none;
 
       &:hover {
         background-color: $brainflix-blue-hover;
@@ -59,5 +66,56 @@
     height: 48px;
     clip-path: circle(23px at center);
     margin: 0;
+  }
+}
+
+@include medium {
+  .header {
+    margin: 0 3.125vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    &__box-logo {
+      display: flex;
+      justify-content: flex-start;
+      flex-grow: 3;
+      padding-right: 22vw;
+    }
+
+    &__search {
+      &-box {
+        width: 100%;
+        max-width: 30vw;
+        margin: 0;
+      }
+
+      &-input {
+        width: auto;
+      }
+    }
+
+    &__upload {
+      &-btn {
+        margin: 0 24px;
+        width: 100px;
+      }
+    }
+  }
+}
+
+@include huge {
+  .header {
+    margin: 0 12.5vw;
+
+    &__box-logo {
+      padding-right: 509px;
+    }
+
+    &__search-box {
+      width: 100%;
+    }
   }
 }

@@ -16,12 +16,14 @@ body {
 //variables
 @import "./partials/breakpoints";
 @import "./partials/fonts";
-@import "./partials/typography";
 @import "./partials/colors";
+@import "./partials/typography";
 
 //components
+@import "./partials/app";
 @import "./partials/header";
 @import "./partials/mainVideo";
+@import "./partials/mainVideoDetails";
 @import "./partials/comments";
 @import "./partials/commentsList";
 @import "./partials/nextVideo";
