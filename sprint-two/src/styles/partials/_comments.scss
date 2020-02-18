@@ -1,0 +1,99 @@
+.comments {
+  margin: 0 5vw;
+
+  &__total {
+    margin-bottom: 32px;
+  }
+
+  &__divider {
+    margin: 24px 0;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+
+    &__user-picture {
+      width: 48px;
+      height: 48px;
+      clip-path: circle(23px at center);
+      margin: 16px 16px 0 0;
+    }
+
+    &__heading {
+      color: $silver;
+    }
+
+    &__left {
+      width: fit-content;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__input {
+      width: 100%;
+      border: 2px solid $silver;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      padding: 8px;
+      outline: none;
+      font-family: AvenirNextRegular;
+
+      &:focus {
+        border-color: $brainflix-blue;
+      }
+    }
+
+    &__btn {
+      background-color: $brainflix-blue;
+      color: $white;
+      border: none;
+      border-radius: 4px;
+      width: 224px;
+      height: 48px;
+      outline: none;
+
+      &:hover {
+        background-color: $brainflix-blue-hover;
+      }
+    }
+  }
+}
+
+@include medium {
+  .comments {
+    &__form {
+      &__input-btn {
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      &__input {
+        margin-right: 16px;
+        height: 48px;
+        font-size: 16px;
+        line-height: 32px;
+      }
+
+      &__btn {
+        width: 160px;
+      }
+    }
+  }
+}
+
+@include huge {
+  .comments {
+    margin: 0;
+
+    &__form {
+      &__btn {
+        margin: 0;
+      }
+    }
+  }
+}
