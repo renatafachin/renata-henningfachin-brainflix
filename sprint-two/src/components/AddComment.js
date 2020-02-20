@@ -2,10 +2,10 @@ import React from 'react';
 import userPicture from '../assets/Images/Mohan-muruge.jpg';
 
 
-export default function Comments() {
+export default function AddComment() {
     return (
         <div className="comments">
-            <h3 className="comments__total">3 Comments</h3>
+            {/* <h3 className="comments__total">3 Comments</h3> */}
             <form className="comments__form">
                 <div className="comments__form__left">
                     <img className="comments__form__user-picture" src={userPicture} alt="" />

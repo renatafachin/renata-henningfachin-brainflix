@@ -1,0 +1,65 @@
+.upload {
+  margin: 0 5vw;
+
+  &__details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__thumb-heading {
+    color: $silver;
+  }
+
+  &__thumbnail {
+    width: 344px;
+    height: 183px;
+    margin-right: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $alabaster;
+    border: 2px solid $silver;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding: 8px;
+    outline: none;
+    font-family: AvenirNextRegular;
+
+    &:focus {
+      border-color: $brainflix-blue;
+      outline: none;
+    }
+  }
+
+  &__btn-cancel {
+    background-color: transparent;
+    color: $brainflix-blue;
+    border: none;
+    padding: 12px;
+    width: 160px;
+    height: 48px;
+    outline: none;
+
+    &:hover {
+      color: $brainflix-blue-hover;
+    }
+  }
+
+  &__btn-publish {
+    background-color: $brainflix-blue;
+    color: $white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 0 0 0 24px;
+    width: 160px;
+    height: 48px;
+    outline: none;
+
+    &:hover {
+      background-color: $brainflix-blue-hover;
+    }
+  }
+}
