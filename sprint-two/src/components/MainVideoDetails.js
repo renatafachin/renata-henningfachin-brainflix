@@ -4,7 +4,18 @@ import likeIcon from '../assets/Icons/SVG/Icon-likes.svg';
 import DataConvert from '../components/DataConvert.js';
 
 export default function mainVideo(props) {
-    const { title, channel, description, views, likes, timestamp } = props;
+    const { commentsTotal, title, channel, description, views, likes, timestamp } = props;
+
+    // function to customize the phrase to match the number of comments
+    let commTotal;
+
+    if (commentsTotal === 0) {
+        commTotal = 'No comments yet';
+    } else if (commentsTotal === 1) {
+        commTotal = commentsTotal + ' comment';
+    } else {
+        commTotal = commentsTotal + ' comments';
+    };
 
     return (
         <div className="video__details">
@@ -27,7 +38,7 @@ export default function mainVideo(props) {
                     {description}
                 </h4>
             </span>
-            <h3 className="video__comments-total">3 Comments</h3>
+            <h3 className="video__comments-total">{commTotal}</h3>
         </div>
     );
 }

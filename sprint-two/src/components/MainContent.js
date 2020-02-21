@@ -15,8 +15,8 @@ class MainContent extends Component {
 
     componentDidMount() {
 
-        // getting data with Axios with arrow function
-        let id = "1a4kjruuedd9";
+        // getting video details with Axios with arrow function
+        let id = this.props.match.params.id;
         axios.get("https://project-2-api.herokuapp.com/videos/" + id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
             .then(response => {
                 this.setState({
@@ -25,10 +25,10 @@ class MainContent extends Component {
             });
     }
 
-
-
     componentDidUpdate(prevProps, prevState) {
-
+        // console.log(this.props);
+        // console.log(prevProps);
+        // getting video details with Axios with arrow function
         if (prevProps.match.params.id !== this.props.match.params.id) {
             axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
                 .then(response => {
@@ -38,29 +38,47 @@ class MainContent extends Component {
 
                 });
         }
+
+        if (this.props.match.params.commentId && this.props.match.params.commentId !== prevProps.match.params.commentId) {
+            // console.log("---->", this.props.match.params.commentId);
+
+            axios.delete("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "/comments/" + this.props.match.params.commentId + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
+                .then(response => {
+                    // console.log(response.data);
+
+                    axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
+                        .then(response => {
+                            this.setState({
+                                videoDetails: response.data,
+                            });
+
+                        });
+                    // });
+
+                });
+        }
+
     }
 
     render() {
-        const { title, channel, image, description, views, likes, timestamp, comments } = this.state.videoDetails;
-
-        console.log(comments);
+        const { id, title, channel, image, description, views, likes, timestamp } = this.state.videoDetails;
 
         if (!this.state.videoDetails.comments) {
             return <h1>LOADING</h1>
         } else {
-
+            let commTotal = this.state.videoDetails.comments.length;
             return (
                 <>
                     <MainVideo image={image} />
                     <main className="main-structure">
                         <section className="main-structure__left">
-                            <MainVideoDetails title={title} channel={channel} description={description} views={views} likes={likes} timestamp={timestamp} />
+                            <MainVideoDetails id={id} commentsTotal={commTotal} title={title} channel={channel} description={description} views={views} likes={likes} timestamp={timestamp} />
                             <AddComment />
 
                             <div className="comments-list">
                                 {
                                     this.state.videoDetails.comments.map(comment => {
-                                        return <Comment key={comment.id} id={comment.id} name={comment.name} comment={comment.comment} timestamp={comment.timestamp} />
+                                        return <Comment videoId={id} key={comment.id} id={comment.id} name={comment.name} comment={comment.comment} timestamp={comment.timestamp} />
                                     })
                                 }
                             </div>

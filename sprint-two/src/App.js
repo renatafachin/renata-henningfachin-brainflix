@@ -21,7 +21,7 @@ class App extends Component {
 
   componentDidMount() {
     // getting data with Axios with arrow function
-    // console.log(id);
+    // console.log(videoId);
     axios.get("https://project-2-api.herokuapp.com/videos?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
       .then(response => {
         this.setState({
@@ -41,6 +41,7 @@ class App extends Component {
           <Switch>
             <Redirect from="/" to="/video/1a4kjruuedd9" exact />
             <Route path="/video/:id" render={(renderProps) => <MainContent videos={this.state.arrayVideos} {...renderProps} />} />
+            <Route path="/videos/:id/comments/:commentId" render={(renderProps) => <MainContent videos={this.state.arrayVideos} {...renderProps} />} />
             <Route path="/upload" component={Upload} />
           </Switch>
         </>
