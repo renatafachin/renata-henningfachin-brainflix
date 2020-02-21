@@ -1,16 +1,18 @@
 import React from 'react';
 import viewIcon from '../assets/Icons/SVG/Icon-views.svg';
 import likeIcon from '../assets/Icons/SVG/Icon-likes.svg';
+import DataConvert from '../components/DataConvert.js';
 
 export default function mainVideo(props) {
-    const { id, title, channel, description, views, likes, timestamp } = props;
+    const { title, channel, description, views, likes, timestamp } = props;
+
     return (
         <div className="video__details">
             <h1 className="video__details__title">{title}</h1>
             <div className="video__details-top">
                 <div className="video__details-author-date">
                     <h3>{channel}</h3>
-                    <h4 className="video__details-author-date__date">{timestamp}</h4>
+                    <h4 className="video__details-author-date__date"><DataConvert value={timestamp} /></h4>
                 </div>
                 <div className="video__details__views-likes">
                     <img className="video__details__icon" src={viewIcon} alt="Views" />

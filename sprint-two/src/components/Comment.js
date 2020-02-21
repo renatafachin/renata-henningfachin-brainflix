@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DataConvert from '../components/DataConvert.js';
 
 class Comment extends Component {
     render() {
@@ -12,7 +13,7 @@ class Comment extends Component {
                     <div className="comments-list__right">
                         <div className="comments-list__right-top">
                             <span><h4 className="comments-list__name">{name}</h4></span>
-                            <span><h4 className="comments-list__date">{timestamp}</h4></span>
+                            <span><h4 className="comments-list__date"><DataConvert value={timestamp} /></h4></span>
                         </div>
                         <span><h4 className="comments-list__text">{comment}</h4></span>
                     </div>

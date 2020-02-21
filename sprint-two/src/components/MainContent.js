@@ -4,11 +4,7 @@ import MainVideo from './MainVideo'
 import MainVideoDetails from './MainVideoDetails'
 import AddComment from './AddComment'
 import Comment from './Comment'
-// import { BrowserRouter as Router, Link } from "react-router-dom";
-import CommentsList from './CommentsList'
 import NextVideo from './NextVideo'
-import viewIcon from '../assets/Icons/SVG/Icon-views.svg';
-import likeIcon from '../assets/Icons/SVG/Icon-likes.svg';
 
 class MainContent extends Component {
 
@@ -26,9 +22,6 @@ class MainContent extends Component {
                 this.setState({
                     videoDetails: response.data,
                 });
-                // console.log("video --> ", this.state.videoDetails);
-                // console.log("comments --> ", this.state.listComments)
-
             });
     }
 
@@ -48,7 +41,7 @@ class MainContent extends Component {
     }
 
     render() {
-        const { id, title, channel, image, description, views, likes, video, timestamp, comments } = this.state.videoDetails;
+        const { title, channel, image, description, views, likes, timestamp, comments } = this.state.videoDetails;
 
         console.log(comments);
 

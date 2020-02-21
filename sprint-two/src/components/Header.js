@@ -5,7 +5,7 @@ import search from '../assets/Icons/SVG/Icon-search.svg';
 import upload from '../assets/Icons/SVG/Icon-upload.svg';
 import userPicture from '../assets/Images/Mohan-muruge.jpg';
 
-export default function Header(props) {
+export default function Header() {
     return (
         <>
             <div className="header">
