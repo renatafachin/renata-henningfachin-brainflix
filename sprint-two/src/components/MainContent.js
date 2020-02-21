@@ -7,46 +7,66 @@ import Comment from './Comment'
 // import { BrowserRouter as Router, Link } from "react-router-dom";
 import CommentsList from './CommentsList'
 import NextVideo from './NextVideo'
+import viewIcon from '../assets/Icons/SVG/Icon-views.svg';
+import likeIcon from '../assets/Icons/SVG/Icon-likes.svg';
 
 class MainContent extends Component {
 
     state = {
-        listComments: []
+        videoDetails: []
     };
 
 
     componentDidMount() {
 
         // getting data with Axios with arrow function
-        axios.get("https://project-2-api.herokuapp.com/videos/1a3cjruucpf7?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
+        let id = "1a4kjruuedd9";
+        axios.get("https://project-2-api.herokuapp.com/videos/" + id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
             .then(response => {
                 this.setState({
-                    arrayComments: response.data,
-                    listComments: response.data.comments
+                    videoDetails: response.data,
                 });
-                console.log(this.state.listComments)
+                // console.log("video --> ", this.state.videoDetails);
+                // console.log("comments --> ", this.state.listComments)
+
             });
     }
 
-    render() {
 
-        if (this.state.listComments === "") {
+
+    componentDidUpdate(prevProps, prevState) {
+
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
+                .then(response => {
+                    this.setState({
+                        videoDetails: response.data,
+                    });
+
+                });
+        }
+    }
+
+    render() {
+        const { id, title, channel, image, description, views, likes, video, timestamp, comments } = this.state.videoDetails;
+
+        console.log(comments);
+
+        if (!this.state.videoDetails.comments) {
             return <h1>LOADING</h1>
-            // console.log(<h2>ERROR</h2>);
-        } else
+        } else {
 
             return (
                 <>
-                    <MainVideo />
+                    <MainVideo image={image} />
                     <main className="main-structure">
                         <section className="main-structure__left">
-                            <MainVideoDetails />
-
+                            <MainVideoDetails title={title} channel={channel} description={description} views={views} likes={likes} timestamp={timestamp} />
                             <AddComment />
 
                             <div className="comments-list">
                                 {
-                                    this.state.listComments.map(comment => {
+                                    this.state.videoDetails.comments.map(comment => {
                                         return <Comment key={comment.id} id={comment.id} name={comment.name} comment={comment.comment} timestamp={comment.timestamp} />
                                     })
                                 }
@@ -58,6 +78,7 @@ class MainContent extends Component {
                     </main>
                 </>
             );
+        };
     };
 };
 
