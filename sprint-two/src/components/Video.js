@@ -6,6 +6,7 @@ class Video extends Component {
     render() {
         const { id, title, channel, image } = this.props;
         let videoLink = `/video/${id}`
+        console.log();
 
         return (
             <div className="next-video__item">
@@ -15,7 +16,7 @@ class Video extends Component {
                 <div className="next-video__right">
                     <span>
                         <Link className="next-video__link" to={videoLink}>
-
+                            <h4 className="next-video__title--cut">{title}</h4>
                             <h4 className="next-video__title">{title}</h4>
                         </Link>
                     </span>
