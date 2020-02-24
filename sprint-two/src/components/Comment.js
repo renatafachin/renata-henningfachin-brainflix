@@ -6,7 +6,6 @@ class Comment extends Component {
     render() {
         const { videoId, id, name, comment, timestamp } = this.props;
         let deleteComment = `/videos/${videoId}/comments/${id}`
-        // console.log(deleteComment);
         return (
             <div key={id}>
                 <div className="comments-list__item">

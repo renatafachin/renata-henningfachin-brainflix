@@ -657,9 +657,32 @@ h5 {
   margin-bottom: 16px;
 }
 
+.next-video__title--cut {
+  display: inline-block;
+}
+
+.next-video__title--full {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .next-video__title--cut {
+    display: none;
+  }
+  .next-video__title--full {
+    display: inline-block;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .next-video {
     margin: 0;
+  }
+  .next-video__title--cut {
+    display: none;
+  }
+  .next-video__title--full {
+    display: inline-block;
   }
 }
 
