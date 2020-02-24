@@ -16,7 +16,7 @@
   &__item {
     display: flex;
     justify-self: start;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   &__left {
@@ -27,6 +27,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  &__link {
+    text-decoration: none;
   }
 
   &__title {

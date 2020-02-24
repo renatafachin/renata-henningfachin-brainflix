@@ -26,8 +26,7 @@ class MainContent extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        // console.log(this.props);
-        // console.log(prevProps);
+
         // getting video details with Axios with arrow function
         if (prevProps.match.params.id !== this.props.match.params.id) {
             axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
@@ -40,11 +39,9 @@ class MainContent extends Component {
         }
 
         if (this.props.match.params.commentId && this.props.match.params.commentId !== prevProps.match.params.commentId) {
-            // console.log("---->", this.props.match.params.commentId);
 
             axios.delete("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "/comments/" + this.props.match.params.commentId + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
                 .then(response => {
-                    // console.log(response.data);
 
                     axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
                         .then(response => {
@@ -53,7 +50,6 @@ class MainContent extends Component {
                             });
 
                         });
-                    // });
 
                 });
         }
@@ -64,7 +60,7 @@ class MainContent extends Component {
         const { id, title, channel, image, description, views, likes, timestamp } = this.state.videoDetails;
 
         if (!this.state.videoDetails.comments) {
-            return <h1>LOADING</h1>
+            return <h5> </h5>
         } else {
             let commTotal = this.state.videoDetails.comments.length;
             return (
@@ -84,7 +80,7 @@ class MainContent extends Component {
                             </div>
                         </section>
                         <aside className="main-structure__aside">
-                            <NextVideo videos={this.props.videos} />
+                            <NextVideo videoId={id} videos={this.props.videos} />
                         </aside>
                     </main>
                 </>

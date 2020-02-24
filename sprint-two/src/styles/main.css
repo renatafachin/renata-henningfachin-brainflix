@@ -148,25 +148,25 @@ h5 {
           justify-content: center;
 }
 
-.header__search-box {
+.header__search__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border: 1px solid #afafaf;
+  border: 2px solid #e1e1e1;
   border-radius: 4px;
   margin-bottom: 8px;
   background-color: #fafafa;
 }
 
-.header__search-button {
+.header__search__button {
   background-color: transparent;
   border: none;
 }
 
-.header__search-input {
+.header__search__input {
   background-color: transparent;
   border: none;
   width: 288px;
@@ -175,7 +175,7 @@ h5 {
   font-family: AvenirNextRegular;
 }
 
-.header__search-input:focus {
+.header__search__input:focus {
   outline: none;
 }
 
@@ -190,9 +190,10 @@ h5 {
       flex-wrap: nowrap;
 }
 
-.header__upload-btn {
+.header__upload__btn {
   background-color: #0095ff;
   color: #ffffff;
+  font-weight: 600;
   border: none;
   border-radius: 4px;
   padding: 12px;
@@ -202,7 +203,7 @@ h5 {
   outline: none;
 }
 
-.header__upload-btn:hover {
+.header__upload__btn:hover {
   background-color: #0065ad;
 }
 
@@ -244,15 +245,15 @@ h5 {
             flex-grow: 3;
     padding-right: 22vw;
   }
-  .header__search-box {
+  .header__search__box {
     width: 100%;
     max-width: 30vw;
     margin: 0;
   }
-  .header__search-input {
+  .header__search__input {
     width: auto;
   }
-  .header__upload-btn {
+  .header__upload__btn {
     margin: 0 24px;
     width: 100px;
   }
@@ -454,7 +455,7 @@ h5 {
 
 .comments__form__input {
   width: 100%;
-  border: 2px solid #afafaf;
+  border: 2px solid #e1e1e1;
   border-radius: 4px;
   margin-bottom: 16px;
   padding: 8px;
@@ -469,9 +470,10 @@ h5 {
 .comments__form__btn {
   background-color: #0095ff;
   color: #ffffff;
+  font-weight: 600;
   border: none;
   border-radius: 4px;
-  width: 224px;
+  width: 100%;
   height: 48px;
   outline: none;
 }
@@ -566,6 +568,19 @@ h5 {
   line-height: 20px;
 }
 
+.comments-list__delete {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #0095ff;
+  font-weight: 600;
+  padding-top: 16px;
+}
+
+.comments-list__delete:hover {
+  color: red;
+}
+
 @media only screen and (min-width: 768px) {
   .comments-list__right-top {
     display: -webkit-box;
@@ -611,7 +626,7 @@ h5 {
   display: -ms-flexbox;
   display: flex;
   justify-self: start;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .next-video__left {
@@ -633,6 +648,10 @@ h5 {
           justify-content: flex-start;
 }
 
+.next-video__link {
+  text-decoration: none;
+}
+
 .next-video__title {
   font-weight: 900;
   margin-bottom: 16px;
@@ -648,10 +667,34 @@ h5 {
   margin: 0 5vw;
 }
 
+.upload__hr--mobile {
+  height: 1px;
+  color: #e1e1e1;
+  background-color: #e1e1e1;
+  border: none;
+}
+
+.upload__heading {
+  margin: 24px 0 32px;
+}
+
+.upload__hr--tablet-desk {
+  visibility: collapse;
+  height: 1px;
+  color: #e1e1e1;
+  background-color: #e1e1e1;
+  border: none;
+}
+
 .upload__details {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -665,15 +708,38 @@ h5 {
 }
 
 .upload__thumbnail {
-  width: 344px;
-  height: 183px;
+  width: 100%;
+  height: 153px;
   margin-right: 24px;
 }
 
-.upload__input {
+.upload__form-section {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.upload__input-title {
   width: 100%;
   background-color: #fafafa;
-  border: 2px solid #afafaf;
+  border: 2px solid #e1e1e1;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  padding: 12px;
+  outline: none;
+  font-family: AvenirNextRegular;
+}
+
+.upload__input-title:focus {
+  border-color: #0095ff;
+  outline: none;
+}
+
+.upload__input-description {
+  width: 100%;
+  background-color: #fafafa;
+  height: 143px;
+  line-height: 24px;
+  border: 2px solid #e1e1e1;
   border-radius: 4px;
   margin-bottom: 16px;
   padding: 8px;
@@ -681,17 +747,29 @@ h5 {
   font-family: AvenirNextRegular;
 }
 
-.upload__input:focus {
+.upload__input-description:focus {
   border-color: #0095ff;
   outline: none;
+}
+
+.upload__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .upload__btn-cancel {
   background-color: transparent;
   color: #0095ff;
+  font-weight: 600;
   border: none;
-  padding: 12px;
-  width: 160px;
+  padding: 24px;
+  margin-bottom: 24px;
+  width: 100%;
   height: 48px;
   outline: none;
 }
@@ -703,16 +781,80 @@ h5 {
 .upload__btn-publish {
   background-color: #0095ff;
   color: #ffffff;
+  font-weight: 600;
   border: none;
   border-radius: 4px;
   padding: 12px;
-  margin: 0 0 0 24px;
-  width: 160px;
+  width: 100%;
   height: 48px;
   outline: none;
 }
 
 .upload__btn-publish:hover {
   background-color: #0065ad;
+}
+
+@media only screen and (min-width: 768px) {
+  .upload {
+    margin: 0 3.125vw;
+  }
+  .upload__hr--tablet-desk {
+    visibility: visible;
+    margin-bottom: 40px;
+  }
+  .upload__thumbnail {
+    width: 344px;
+    height: 183px;
+    margin-right: 24px;
+  }
+  .upload__input-description {
+    margin-bottom: 32px;
+  }
+  .upload__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .upload__btn-cancel {
+    width: 160px;
+    padding: 0;
+  }
+  .upload__btn-publish {
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .upload {
+    margin: 0 12.5vw;
+  }
+  .upload__details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .upload__form-section {
+    margin: 0;
+  }
+  .upload__input-description {
+    height: 94px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

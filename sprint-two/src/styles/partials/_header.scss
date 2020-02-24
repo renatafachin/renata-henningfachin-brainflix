@@ -11,21 +11,21 @@
   }
 
   &__search {
-    &-box {
+    &__box {
       display: flex;
       justify-content: flex-start;
-      border: 1px solid $silver;
+      border: 2px solid $mercury;
       border-radius: 4px;
       margin-bottom: 8px;
       background-color: $alabaster;
     }
 
-    &-button {
+    &__button {
       background-color: transparent;
       border: none;
     }
 
-    &-input {
+    &__input {
       background-color: transparent;
       border: none;
       width: 288px;
@@ -44,9 +44,10 @@
     justify-content: flex-start;
     flex-wrap: nowrap;
 
-    &-btn {
+    &__btn {
       background-color: $brainflix-blue;
       color: $white;
+      font-weight: 600;
       border: none;
       border-radius: 4px;
       padding: 12px;
@@ -86,19 +87,19 @@
     }
 
     &__search {
-      &-box {
+      &__box {
         width: 100%;
         max-width: 30vw;
         margin: 0;
       }
 
-      &-input {
+      &__input {
         width: auto;
       }
     }
 
     &__upload {
-      &-btn {
+      &__btn {
         margin: 0 24px;
         width: 100px;
       }

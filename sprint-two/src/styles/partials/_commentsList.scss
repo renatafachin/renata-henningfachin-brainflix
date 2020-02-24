@@ -41,6 +41,19 @@
   &__text {
     line-height: 20px;
   }
+
+  &__delete {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $brainflix-blue;
+    font-weight: 600;
+    padding-top: 16px;
+
+    &:hover {
+      color: red;
+    }
+  }
 }
 
 @include medium {
