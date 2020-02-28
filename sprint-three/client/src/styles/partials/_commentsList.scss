@@ -1,0 +1,76 @@
+.comments-list {
+  margin: 0 5vw;
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__divider {
+    margin: 24px 0;
+  }
+
+  &__user-picture {
+    width: 44px;
+    height: 44px;
+    clip-path: circle(21px at center);
+    margin-right: 16px;
+  }
+
+  &__left {
+    width: fit-content;
+  }
+
+  &__right {
+    &-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__name {
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  &__date {
+    color: $silver;
+  }
+
+  &__text {
+    line-height: 20px;
+  }
+
+  &__delete {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $brainflix-blue;
+    font-weight: 600;
+    padding-top: 16px;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+@include medium {
+  .comments-list {
+    &__right-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    &__name {
+      margin-right: 16px;
+    }
+  }
+}
+
+@include huge {
+  .comments-list {
+    margin: 0;
+  }
+}

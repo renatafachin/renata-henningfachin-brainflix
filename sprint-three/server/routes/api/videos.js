@@ -36,13 +36,13 @@ router.get('/', (req, res) => {
  */
 router.get('/:id', (req, res) => {
   const found = videos.some(video => video.id === req.params.id);
-  if (found) {
-    res.json(videos.filter(video => video.id === req.params.id));
-  } else {
-    res
-      .status(400)
-      .json({ errorMessage: `video with ID:${req.params.id} not found` });
-  }
+  // if (found) {
+  res.json(videos.filter(video => video.id === req.params.id));
+  // } else {
+  //   res
+  //     .status(400)
+  //     .json({ errorMessage: `video with ID:${req.params.id} not found` });
+  // }
 });
 
 /**

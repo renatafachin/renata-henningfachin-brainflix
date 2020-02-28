@@ -1,0 +1,105 @@
+.video {
+  &__divider {
+    margin: 24px 0;
+  }
+
+  &__comments-total {
+    margin-bottom: 32px;
+  }
+
+  &__details {
+    margin: 0 5vw;
+
+    &__title {
+      margin-top: 24px;
+    }
+
+    &-author-date {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      width: fit-content;
+
+      &__date {
+        line-height: 22px;
+        padding-left: 8px;
+        color: $silver;
+      }
+    }
+
+    &__views-likes {
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      width: fit-content;
+    }
+
+    &__icon {
+      margin-right: 8px;
+    }
+
+    &__nums {
+      padding-right: 24px;
+      padding-top: 4px;
+    }
+
+    &__description {
+      margin-bottom: 40px;
+      line-height: 20px;
+    }
+  }
+}
+
+@include medium {
+  .video {
+    &__details {
+      &-top {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__title {
+        margin-top: 40px;
+      }
+
+      &-author-date {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        width: fit-content;
+
+        &__date {
+          padding-left: 8px;
+          line-height: 24px;
+        }
+        &__views-likes {
+          margin-top: 24px;
+        }
+
+        &__nums-right {
+          padding-right: 0;
+        }
+      }
+
+      &__description {
+        width: 68vw;
+      }
+    }
+  }
+}
+
+@include huge {
+  .video {
+    &__details {
+      margin: 0;
+
+      &__title {
+        margin-top: 32px;
+      }
+
+      &__description {
+        width: 80%;
+      }
+    }
+  }
+}
