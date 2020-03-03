@@ -31,7 +31,6 @@ class MainContent extends Component {
     componentDidUpdate(prevProps, prevState) {
 
         let id = this.props.match.params.id;
-        // let commentId = this.props.match.params.commentId;
 
         // getting video details 
         if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -43,23 +42,6 @@ class MainContent extends Component {
 
                 });
         }
-
-        // deleting messages
-        // if (this.props.match.params.commentId && this.props.match.params.commentId !== prevProps.match.params.commentId) {
-
-        //     axios.delete(`/api/videos/${id}/comments/${commentId}`)
-        //         .then(response => {
-
-        //             axios.get(`/api/videos/${id}`)
-        //                 .then(response => {
-        //                     this.setState({
-        //                         videoDetails: response.data[0],
-        //                     });
-
-        //                 });
-
-        //         });
-        // }
 
     }
 
@@ -95,6 +77,5 @@ class MainContent extends Component {
         };
     };
 };
-
 
 export default MainContent;

@@ -1,6 +1,10 @@
 .video {
+  background-color: $real-black;
+  display: flex;
+  justify-content: center;
+
   &__player {
-    background-color: $real-black;
+    object-fit: cover;
     height: 183px;
     width: 100vw;
     margin: 0;
@@ -13,12 +17,14 @@
 
 @include medium {
   .video__player {
+    width: 700px;
     height: 400px;
   }
 }
 
 @include huge {
   .video__player {
+    width: 944px;
     height: 540px;
   }
 }

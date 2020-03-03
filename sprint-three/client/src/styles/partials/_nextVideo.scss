@@ -1,5 +1,7 @@
 .next-video {
   margin: 0 5vw;
+  &__next-video__list {
+  }
 
   &__heading {
     color: $silver;
@@ -61,7 +63,19 @@
 
 @include huge {
   .next-video {
+    display: flex;
+    border-left: 2px solid $silver;
     margin: 0;
+    padding-right: 16px;
+
+    &__heading {
+      padding-left: 16px;
+    }
+
+    &__video {
+      padding-left: 16px;
+    }
+
     &__title {
       &--cut {
         display: none;

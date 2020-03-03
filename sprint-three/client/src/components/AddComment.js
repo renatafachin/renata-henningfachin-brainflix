@@ -13,7 +13,6 @@ export default function AddComment() {
                     <h5 className="comments__form__heading">JOIN THE CONVERSATION</h5>
                     <div className="comments__form__input-btn">
                         <textarea className="comments__form__input" name="comment" rows="4" placeholder="Add a new comment"></textarea>
-                        {/* <button onClick={() => this.handleComment(??????)} className="comments__form__btn">COMMENT</button> */}
                     </div>
                 </div>
             </form>

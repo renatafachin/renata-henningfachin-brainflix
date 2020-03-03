@@ -271,8 +271,19 @@ h5 {
   }
 }
 
-.video__player {
+.video {
   background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.video__player {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 183px;
   width: 100vw;
   margin: 0;
@@ -284,12 +295,14 @@ h5 {
 
 @media only screen and (min-width: 768px) {
   .video__player {
+    width: 700px;
     height: 400px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .video__player {
+    width: 944px;
     height: 540px;
   }
 }
@@ -526,6 +539,7 @@ h5 {
 
 .comments-list__divider {
   margin: 24px 0;
+  border: 1px solid #afafaf;
 }
 
 .comments-list__user-picture {
@@ -676,7 +690,18 @@ h5 {
 
 @media only screen and (min-width: 1440px) {
   .next-video {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-left: 2px solid #afafaf;
     margin: 0;
+    padding-right: 16px;
+  }
+  .next-video__heading {
+    padding-left: 16px;
+  }
+  .next-video__video {
+    padding-left: 16px;
   }
   .next-video__title--cut {
     display: none;

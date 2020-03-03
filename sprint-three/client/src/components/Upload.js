@@ -46,7 +46,6 @@ class Upload extends Component {
                                 <input className="upload__input-title" type="text" name="videoTitle" placeholder="Add a title to your video" required />
                                 <h5 className="upload__thumb-heading">ADD A VIDEO DESCRIPTION</h5>
                                 <textarea className="upload__input-description" name="videoDescription" rows="5" placeholder="Add a description of your video" required />
-                                {/* <h5 className="upload__thumb-heading">ADD A VIDEO URL</h5> */}
                                 <input type="hidden" name="videoImage" value="https://d17fnq9dkz9hgj.cloudfront.net/uploads/2018/03/Russian-Blue_01.jpg?resize=960,540" />
                                 <input type="hidden" name="videoChannel" value="Mohan Muruge" />
                             </div>

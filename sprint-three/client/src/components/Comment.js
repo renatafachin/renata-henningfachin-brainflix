@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import DataConvert from '../components/DataConvert.js';
 
 class Comment extends Component {
     render() {
-        const { videoId, id, name, comment, timestamp } = this.props;
-        let deleteComment = `/videos/${videoId}/comments/${id}`
+        const { id, name, comment, timestamp } = this.props;
         return (
             <div key={id}>
                 <div className="comments-list__item">
@@ -18,7 +16,6 @@ class Comment extends Component {
                             <span><h4 className="comments-list__date"><DataConvert value={timestamp} /></h4></span>
                         </div>
                         <span><h4 className="comments-list__text">{comment}</h4></span>
-                        <Link to={deleteComment}><button className="comments-list__delete">DELETE</button></Link>
                     </div>
                 </div>
                 <hr className="comments-list__divider"></hr>
