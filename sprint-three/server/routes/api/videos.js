@@ -75,48 +75,4 @@ router.post('/', (req, res) => {
   res.json(newId);
 });
 
-// /**
-//  *  update video with :id
-//  */
-// router.put('/:id', (req, res) => {
-//   const found = videos.some(video => video.id === req.params.id);
-//   if (found) {
-//     videos.forEach(video => {
-//       if (video.id === req.params.id) {
-//         video.title = req.body.title ? req.body.title : video.title;
-//         video.description = req.body.description
-//           ? req.body.description
-//           : video.description;
-//         video.image = req.body.image ? req.body.image : video.image;
-//       }
-//     });
-//     helper.writeJSONFile(videosFile, videos);
-//     res.json({ msg: 'video Updated', videos: videos });
-//   } else {
-//     res
-//       .status(404)
-//       .json({ errorMessage: `video with ID: ${req.params.id} not found` });
-//   }
-// });
-
-/**
- * Delete message
- */
-// axios.delete(`/api/videos/${id}/comments/${commentId}`)
-// router.delete('/:id/comments/:commentId', (req, res) => {
-//   // const found = messages.some(message => message.id === req.params.id);
-//   // if (found) {
-//   const videosAfterDeletion = videos.filter(video => video.id !== req.params.id);
-//   // helper.writeJSONFile(videosFile, videosAfterDeletion);
-//   res.json({
-//     msg: `comment with ID: ${req.params.commentId} Deleted`,
-//     // videos: videosAfterDeletion
-//   });
-//   // } else {
-//   //   res
-//   //     .status(404)
-//   //     .json({ errorMessage: `message with ID: ${req.params.id} not found` });
-//   // }
-// });
-
 module.exports = router;
