@@ -7,6 +7,10 @@ class Video extends Component {
         const { id, title, channel, image } = this.props;
         let videoLink = `/video/${id}`
 
+        function goTop() {
+            window.scrollTo(0, 0);
+        }
+
         let cutTitle = cutStr(title);
         function cutStr(title) {
             let arrTitle = title.split(" ");
@@ -29,7 +33,7 @@ class Video extends Component {
         return (
             <div className="next-video__item">
                 <div className="next-video__left">
-                    <Link to={videoLink}><img className="next-video__video" src={image} alt="" /></Link>
+                    <Link to={videoLink} onClick={goTop()}><img className="next-video__video" src={image} alt="" /></Link>
                 </div>
                 <div className="next-video__right">
                     <span>

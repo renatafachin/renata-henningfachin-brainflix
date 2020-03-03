@@ -5,8 +5,8 @@ require('dotenv').config();
 const { PORT, BACKEND_URL } = process.env;
 
 // cross origin resource sharing
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 
 // express.urlencoded alows posting form data
 app.use(express.urlencoded({ extended: true }));

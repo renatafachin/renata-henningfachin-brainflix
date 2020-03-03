@@ -15,7 +15,14 @@ const getNewId = () => {
   return uuid();
 };
 
+
+const timestamp = () => {
+  return Date.now();
+};
+
+
 module.exports = {
   writeJSONFile,
-  getNewId
+  getNewId,
+  timestamp
 };

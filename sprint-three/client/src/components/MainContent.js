@@ -16,41 +16,26 @@ class MainContent extends Component {
 
         //getting data from videos.json
         let id = this.props.match.params.id;
-        // let id = "1af0jruup5gu";
 
         axios.get(`/api/videos/${id}`)
             .then(response => {
                 this.setState({
                     videoDetails: response.data[0]
                 });
-                // console.log(this.state.videoDetails);
             })
             .catch(err => {
                 console.log(err);
             });
-        // console.log(this.state.videoDetails);
     }
-
-
-    // componentDidMount() {
-
-    //     // getting video details with Axios with arrow function
-    //     let id = this.props.match.params.id;
-    //     axios.get("https://project-2-api.herokuapp.com/videos/" + id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
-    //         .then(response => {
-    //             this.setState({
-    //                 videoDetails: response.data,
-    //             });
-    //         });
-    // }
 
     componentDidUpdate(prevProps, prevState) {
 
         let id = this.props.match.params.id;
-        // getting video details with Axios with arrow function
+        // let commentId = this.props.match.params.commentId;
+
+        // getting video details 
         if (prevProps.match.params.id !== this.props.match.params.id) {
             axios.get(`/api/videos/${id}`)
-                // axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
                 .then(response => {
                     this.setState({
                         videoDetails: response.data[0],
@@ -59,15 +44,16 @@ class MainContent extends Component {
                 });
         }
 
+        // deleting messages
         // if (this.props.match.params.commentId && this.props.match.params.commentId !== prevProps.match.params.commentId) {
 
-        //     axios.delete("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "/comments/" + this.props.match.params.commentId + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
+        //     axios.delete(`/api/videos/${id}/comments/${commentId}`)
         //         .then(response => {
 
-        //             axios.get("https://project-2-api.herokuapp.com/videos/" + this.props.match.params.id + "?api_key=9a9fc026-4b85-43b1-a00a-ecf8587e838f")
+        //             axios.get(`/api/videos/${id}`)
         //                 .then(response => {
         //                     this.setState({
-        //                         videoDetails: response.data,
+        //                         videoDetails: response.data[0],
         //                     });
 
         //                 });
@@ -84,7 +70,6 @@ class MainContent extends Component {
             return <h5> Loading</h5>
         } else {
             let commTotal = this.state.videoDetails.comments.length;
-            // let commTotal = "3";
             return (
                 <>
                     <MainVideo image={image} />
